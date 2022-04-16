@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+// ====================================
+// mixin
+// ====================================
+
+// flex関連
+@mixin d-flex() {
+	display:-webkit-flex;
+	display:flex;
+}
+@mixin flex-flow($value1:row,$value2:nowrap) {
+	-webkit-flex-flow:$value1 $value2;
+	flex-flow:$value1 $value2;
+}
+
+@mixin flex-direction($value1:row) {
+	-webkit-flex-direction:$value1;
+	flex-direction:$value1;
+}
+@mixin flex-wrap($value1:nowrap) {
+	-webkit-flex-wrap:$value1;
+	flex-wrap:$value1;
+}
+@mixin flex($value1:1,$value2:1,$value3:auto,$value4:true) {
+	@if $value4 == true{
+		width: $value3;
+	} @else {
+		width: 100%;
+	}
+	-webkit-flex:$value1 $value2 $value3;
+	flex:$value1 $value2 $value3;
+}
+@mixin flex-grow($value1:1) {
+	-webkit-flex-grow:$value1;
+	flex-grow:$value1;
+}
+@mixin flex-shrink($value1:1) {
+	-webkit-flex-shrink:$value1;
+	flex-shrink:$value1;
+}
+@mixin flex-basis($value1:auto,$value2:true) {
+	@if $value2 == true{
+		width: $value1;
+	} @else {
+		width: 100%;
+	}
+	-webkit-flex-basis:$value1;
+	flex-basis:$value1;
+}
+@mixin align-items($value1:center) {
+	-webkit-align-items: $value1;
+	align-items: $value1;
+}
+@mixin align-self($value1:center) {
+	-webkit-align-self: $value1;
+	align-self: $value1;
+}
+@mixin align-content($value1:center) {
+	-webkit-align-content: $value1;
+	align-content: $value1;
+}
+@mixin justify-content($value1:center) {
+	-webkit-justify-content: $value1;
+	justify-content: $value1;
+}
+@mixin justify-self($value1:center) {
+	-webkit-justify-self: $value1;
+	justify-self: $value1;
+}
+@mixin order($value1:0) {
+	-webkit-order: $value1;
+	order: $value1;
+}
+
+
+// grid関連
+@mixin d-grid() {
+	display: -ms-grid;
+	display: grid;
+}
+@mixin grid-rows($value1:0,$value2:0,$value3:0,$value4:0,$value5:0,$value6:0,$value7:0,$value8:0,$value9:0) {
+	@if $value2 == 0{
+		-ms-grid-rows: $value1;
+		grid-template-rows: $value1;
+	} @else if $value3 == 0{
+		-ms-grid-rows: $value1 $value2;
+		grid-template-rows: $value1 $value2;
+	} @else if $value4 == 0{
+		-ms-grid-rows: $value1 $value2 $value3;
+		grid-template-rows: $value1 $value2 $value3;
+	} @else if $value5 == 0{
+		-ms-grid-rows: $value1 $value2 $value3 $value4;
+		grid-template-rows: $value1 $value2 $value3 $value4;
+	} @else if $value6 == 0{
+		-ms-grid-rows: $value1 $value2 $value3 $value4 $value5;
+		grid-template-rows: $value1 $value2 $value3 $value4 $value5;
+	} @else if $value7 == 0{
+		-ms-grid-rows: $value1 $value2 $value3 $value4 $value5 $value6;
+		grid-template-rows: $value1 $value2 $value3 $value4 $value5 $value6;
+	} @else if $value8 == 0{
+		-ms-grid-rows: $value1 $value2 $value3 $value4 $value5 $value6 $value7;
+		grid-template-rows: $value1 $value2 $value3 $value4 $value5 $value6 $value7;
+	} @else if $value9 == 0 {
+		-ms-grid-rows: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8;
+		grid-template-rows: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8;
+	} @else {
+		-ms-grid-rows: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8 $value9;
+		grid-template-rows: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8 $value9;
+	}
+}
+@mixin grid-columns($value1:0,$value2:0,$value3:0,$value4:0,$value5:0,$value6:0,$value7:0,$value8:0,$value9:0) {
+	@if $value2 == 0{
+		-ms-grid-columns: $value1;
+		grid-template-columns: $value1;
+	} @else if $value3 == 0{
+		-ms-grid-columns: $value1 $value2;
+		grid-template-columns: $value1 $value2;
+	} @else if $value4 == 0{
+		-ms-grid-columns: $value1 $value2 $value3;
+		grid-template-columns: $value1 $value2 $value3;
+	} @else if $value5 == 0{
+		-ms-grid-columns: $value1 $value2 $value3 $value4;
+		grid-template-columns: $value1 $value2 $value3 $value4;
+	} @else if $value6 == 0{
+		-ms-grid-columns: $value1 $value2 $value3 $value4 $value5;
+		grid-template-columns: $value1 $value2 $value3 $value4 $value5;
+	} @else if $value7 == 0{
+		-ms-grid-columns: $value1 $value2 $value3 $value4 $value5 $value6;
+		grid-template-columns: $value1 $value2 $value3 $value4 $value5 $value6;
+	} @else if $value8 == 0{
+		-ms-grid-columns: $value1 $value2 $value3 $value4 $value5 $value6 $value7;
+		grid-template-columns: $value1 $value2 $value3 $value4 $value5 $value6 $value7;
+	} @else if $value9 == 0 {
+		-ms-grid-columns: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8;
+		grid-template-columns: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8;
+	} @else {
+		-ms-grid-columns: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8 $value9;
+		grid-template-columns: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8 $value9;
+	}
+}
+@mixin grid-row($value1:1,$value2:1) {
+	-ms-grid-row: $value1;
+	-ms-grid-row-span: $value2;
+  grid-row: $value1 / span $value2;
+}
+@mixin grid-column($value1:1,$value2:1) {
+	-ms-grid-column: $value1;
+	-ms-grid-column-span: $value2;
+  grid-column: $value1 / span $value2;
+}
+@mixin grid-align($value1:center) {
+	-ms-grid-column-align: $value1;
+	align-self: $value1;
+}
+@mixin grid-justify($value1:center) {
+	-ms-grid-row-align: $value1;
+	justify-self: $value1;
+}
+
+//transform関連
+@mixin transform($value1:none) {
+	-webkit-transform: $value1;
+	transform: $value1;
+}
+@mixin transform-origin($value1:left top) {
+	-webkit-transform-origin: $value1;
+	transform-origin: $value1;
+}
+
+// font-size関連
+@mixin font-size($size:14) {
+  font-size: $size + px;
+  font-size: ($size / 10) + rem;
+}
+
+// overflow-wrap関連
+@mixin overflow-wrap($break:break-word) {
+  overflow-wrap: $break;
+  word-wrap: $break;
+}
+
+// animation関連
+@mixin animation($value) {
+	-webkit-animation: $value;
+	animation: $value;
+}
+@mixin animation-name($value) {
+	-webkit-animation-name:$value;
+	animation-name:$value;
+}
+@mixin animation-delay($value) {
+	-webkit-animation-delay:$value;
+	animation-delay:$value;
+}
+@mixin animation-timing-function($value) {
+	-webkit-animation-timing-function:$value;
+	animation-timing-function:$value;
+}
+@mixin animation-iteration-count($value) {
+	-webkit-animation-iteration-count:$value;
+	animation-iteration-count:$value;
+}
+
+// keyframe関連
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+//吹き出し用三角
+@mixin arw($pos:left,$posNum:-32px,$width:16px,$height:8px,$color:#000) {
+	content: "";
+	position: absolute;
+	@if $pos == left {
+		left: $posNum;
+		top: 0;
+		bottom: 0;
+		border-color: transparent $color transparent transparent;
+	} @else if $pos == right {
+		right: $posNum;
+		top: 0;
+		bottom: 0;
+		border-color: transparent transparent transparent $color;
+	} @else if $pos == top {
+		top: $posNum;
+		left: 0;
+		right: 0;
+		border-color: transparent transparent $color transparent;
+	} @else if $pos == bottom {
+		bottom: $posNum;
+		left: 0;
+		right: 0;
+		border-color: $color transparent transparent transparent;
+	}
+	margin: auto;
+	border-width: $height $width;
+	border-style: solid;
+	width: 0;
+	height: 0;
+}
+
+//タイトル両サイドにスラッシュで強調するやつ
+@mixin slash($pos:left,$posNum:-32px,$width:16px,$bgColor:#000,$deg:15deg) {
+	content: "";
+	position: absolute;
+	@if $pos == left {
+		left: $posNum;
+		top: 0;
+		bottom: 0;
+	} @else if $pos == right {
+		right: $posNum;
+		top: 0;
+		bottom: 0;
+	}
+	transform-origin: center center;
+	transform: rotate($deg);
+	margin: auto;
+	width: $width;
+	height: auto;
+	background-color: $bgColor
+}

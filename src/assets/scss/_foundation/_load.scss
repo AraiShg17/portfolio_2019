@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+//ページ遷移アニメーション
+.load-enter-active ,.load-leave-active {
+  $load : .3s;
+  transition: all $load;
+  position: relative;
+  &::before{
+    opacity: 0;
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1000;
+    background-color: #fff;
+    transition: all $load linear;
+  }
+  &::after{
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    height: 2px;
+    z-index: 9999999999;
+    transform-origin: left center;
+    transform: scale(0,1);
+    background-color: rgba(var(--safe),1);
+    transition: all $load linear;
+  }
+}
+.load-enter-active {
+  &::after{
+    transform: scale(0,1);
+    transform-origin: right center;
+  }
+}
+.load-leave-active {
+  transition-duration: 0s;
+  &::after{
+    transform: scale(0,1);
+    transform-origin: left center;
+  }
+}
+
+.load-enter {
+  &::before{
+    opacity: 1;
+  }
+  &::after{
+    transform: scale(1,1);
+  }
+}
+.load-leave-to {
+  transition-duration: 0s;
+  &::before{
+    opacity: 1;
+  }
+  &::after{
+    transform: scale(1,1);
+  }
+}
+
+
+
+//フェードアニメーション
+.fade-enter-active, .fade-leave-active {
+  transition: all .2s;
+  opacity: 1;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+//下からスライドインアニメーション
+.popup-enter-active, .popup-leave-active {
+  transition: all .4s;
+  opacity: 1;
+  transform-origin: center;
+  transform: translateY(0px);
+}
+.popup-enter {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.popup-leave-to {
+  opacity: 0;
+  transform: translateY(40px);
+}

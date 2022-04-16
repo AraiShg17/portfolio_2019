@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* ==========================================================================
+ Base
+========================================================================== */
+html {
+	overflow-y:scroll;
+	font-size:0.625em;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family:'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
+	line-height:1.5;
+	background:#fff;
+	-webkit-text-size-adjust: 100%;
+	font-size:1.2rem;
+	font-weight: 200;
+	color:$clr-black;
+	letter-spacing: 0.1em;
+	font-feature-settings : 'palt';
+  overflow: hidden;
+}
+
+input, button, textarea, select {
+	font-family:'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
+}
+
+img{
+	vertical-align:top;
+  max-width: 100%;
+	width: auto;
+  height: auto;
+}
+
+
+a,button {
+	cursor: pointer;
+  transition: color var(--cubic-btn), opacity var(--cubic-btn), background-color var(--cubic-btn);
+	color: rgba(var(--link),1);
+	text-decoration: none;
+
+	&:link {}
+	&:visited {
+		color: rgba(var(--link),1);
+	}
+	&:active,
+	&:hover {
+		color: rgba(var(--hover),1);
+		text-decoration: none;
+	}
+  &.is-active{
+		color: rgba(var(--hover),1);
+	}
+}
+
+sup,
+sub{
+	font-size: .6em;
+}
+sup{
+	vertical-align: top;
+}
+sub{
+	vertical-align: bottom;
+}
+
+
+/* Google Chrome, Safari, Opera 15+, Android, iOS */
+::-webkit-input-placeholder {
+    color: $clr-weak;
+}
+/* Firefox 18- */
+:-moz-placeholder {
+    color: $clr-weak;
+}
+/* Firefox 19+ */
+::-moz-placeholder {
+    color: $clr-weak;
+}
+/* IE 10+ */
+:-ms-input-placeholder {
+    color: $clr-weak;
+}
+:placeholder-shown {
+    color: $clr-weak;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+    -moz-appearance:textfield;
+}
+
+
+
+
+
+.is-hidePC{
+	display: none;
+}
+.is-hideTAB{
+}
+.is-hideSP{
+}
+@media screen and (max-width: $break-point-tab) {
+	.is-hidePC{
+		display: block;
+	}
+	.is-hideTAB{
+		display: none;
+	}
+	.is-hideSP{
+		display: none;
+	}
+}
+
+@media screen and (max-width: $break-point-sp) {
+	.is-hidePC{
+		display: block;
+	}
+	.is-hideTAB{
+		display: block;
+	}
+	.is-hideSP{
+		display: none;
+	}
+}

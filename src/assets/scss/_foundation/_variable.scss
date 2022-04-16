@@ -1,0 +1,54 @@
+@charset "utf-8";
+// ====================================
+// 共通で使う変数を設定
+// ====================================
+// font-size
+
+//base-size
+$base-size: 5;
+
+// color
+$clr-glay: #b5b5b5;
+$clr-black: #333;
+
+$clr-weak: #666666;
+$clr-strong: #ff6633;
+$clr-link: #59a7ff;
+$clr-active: #dd6666;
+$clr-hover: #59a7ff;
+
+
+//breakPoint
+$break-point-pc: 1280px;
+$break-point-tab: 960px;
+$break-point-sp: 768px;
+
+
+
+//font-weight
+$fw-thin: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+$fw-black: 900;
+
+
+
+//CSS変数
+:root {
+  --cubic: .4s cubic-bezier(0.13, 1.05, 0.96, 1);
+  --cubic-late: .4s cubic-bezier(0.13, 1.05, 0.96, 1);
+  --cubic-btn: .25s cubic-bezier(0.13, 1.05, 0.96, 1);
+  --link: 255,255,255;
+  --hover: 134,239,176;
+  --safe: 57,216,136;
+  --att: 193,86,255;
+  --error: 214,58,58;
+  --shadow: 0 0 5px rgba(102,102,102, .5);
+
+  //breakPoint
+  --break-point-pc: 1280px;
+  --break-point-tab: 960px;
+  --break-point-sp: 768px;
+}
